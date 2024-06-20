@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Table Generator</title>
+    <link rel="stylesheet" href="tableGenerate.css">
+</head>
+<body>
+    <div class="container">
+
+        <h2>Dynamic Table Generator</h2>
+
+        <label for="rows">Rows:</label>
+        <input type="number" id="rows"required>
+
+        <label for="cols">Columns:</label>
+        <input type="number" id="cols" required>
+
+        <button onclick="generateTable()">Generate Table</button>
+        <div id="errorContainer">
+
+        </div>
+        <div id="tableContainer">
+
+        </div>
+    </div>
+   <script src="tableGenerate.js"></script>
+</body>
+</html>
