@@ -41,17 +41,17 @@ function generateTable() {
             cell.textContent = `${i}`;
         }
 
-        // Add delete button to last cell of each row
+   // Add delete button to last cell of each row
         const deleteCell = row.insertCell();
         const deleteButton = document.createElement('button');
         deleteButton.textContent = 'Delete';
         deleteButton.className = 'deleteButton';
         deleteButton.onclick = function() {
-            table.deleteRow(row.rowIndex);
+         table.deleteRow(row.rowIndex);
         };
         deleteCell.appendChild(deleteButton);
     }
-
-    // Append table to container
+ // Append table to container
     tableContainer.appendChild(table);
 }
+
