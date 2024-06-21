@@ -1,3 +1,11 @@
+function preventArithmeticInput(event) {
+    const input = event.target;
+    input.value = input.value.replace(/[^0-9]/g, '');
+}
+
+document.getElementById('rows').addEventListener('input', preventArithmeticInput);
+document.getElementById('cols').addEventListener('input', preventArithmeticInput);
+
 function generateTable() {
     const tableContainer = document.getElementById('tableContainer');
     tableContainer.innerHTML = '';
@@ -15,14 +23,6 @@ function generateTable() {
         return;
     }
 
-    function preventArithmeticInput(event) {
-        const input = event.target;
-        input.value = input.value.replace(/[^0-9]/g, '');
-    }
-
-    document.getElementById('rows').addEventListener('input',preventArithmeticInput);
-    document.getElementById('cols').addEventListener('input',preventArithmeticInput);
-    
     const table = document.createElement('table');
     const headerRow = document.createElement('tr');
     for (let j = 1; j <= cols; j++) {
@@ -33,7 +33,7 @@ function generateTable() {
     const blankHeaderCell = document.createElement('th');
     headerRow.appendChild(blankHeaderCell);
 
-   table.appendChild(headerRow);
+    table.appendChild(headerRow);
 
     for (let i = 1; i <= rows; i++) {
         const row = document.createElement('tr');
